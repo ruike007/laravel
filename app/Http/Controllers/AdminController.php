@@ -64,7 +64,7 @@ class AdminController extends Controller
         $this->validate($request,[
             'name' => 'required|max:64',
             'email' => 'required|email|max:128',
-            'token_id' => 'required|numeric|between:0,1'
+            'token_id' => 'required|numeric|between:0,5'
         ]);
 
         //日志记录，详见common/helpers
