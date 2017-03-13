@@ -60,7 +60,7 @@
                         <li><a href="{{ url('/register') }}">注册</a></li>
                     @else
                         @if ((Auth::user()->token_id)>=1)
-                            <form class="navbar-form navbar-left" action="/search/" method="POST" role="search">
+                            <form class="navbar-form navbar-left" action="/search" method="POST" role="search">
                                 {{ csrf_field() }}
                                 <div class="form-group">
                                     <input type="text" name="item" id="task-item" class="form-control" placeholder="设备查找">
