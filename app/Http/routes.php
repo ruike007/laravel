@@ -49,7 +49,7 @@ Route::resource('user','UserController',
 /**
  * 查找任务
  */
-//Route::post('search','HomeController@search');
+Route::post('search','HomeController@search');
 
 /**
  * 测试路由
