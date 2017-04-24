@@ -83,4 +83,41 @@ class EmlController extends Controller
 
         return view('EmlUpload');
     }
+
+    public function jQupload()
+    {
+        $output_dir = "uploads/";
+        if(isset($_FILES["myfile"]))
+        {
+            $ret = array();
+
+            //	这是针对自定义错误;;
+            /*	$custom_error= array();
+                $custom_error['jquery-upload-file-error']="文件已存在";
+                echo json_encode($custom_error);
+                die();
+            */
+            $error =$_FILES["myfile"]["error"];
+            ////你需要处理这两种情况
+            //如果任何浏览器不支持使用FormData（）序列化多个文件
+            if(!is_array($_FILES["myfile"]["name"])) //单个文件
+            {
+                $fileName = $_FILES["myfile"]["name"];
+                move_uploaded_file($_FILES["myfile"]["tmp_name"],$output_dir.$fileName);
+                $ret[]= $fileName;
+            }
+            else  //多个文件, file[]
+            {
+                $fileCount = count($_FILES["myfile"]["name"]);
+                for($i=0; $i < $fileCount; $i++)
+                {
+                    $fileName = $_FILES["myfile"]["name"][$i];
+                    move_uploaded_file($_FILES["myfile"]["tmp_name"][$i],$output_dir.$fileName);
+                    $ret[]= $fileName;
+                }
+
+            }
+            echo json_encode($ret);
+        }
+    }
 }

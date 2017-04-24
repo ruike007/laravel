@@ -17,9 +17,9 @@
     <link rel="stylesheet" href="{{asset('layout/app.css')}}">
 
 
-    <link rel="stylesheet" href="{{asset('layout/jQuery/uploadfile.css')}}">
+    <link rel="stylesheet" href="{{asset('layout/jQuery/css/uploadfile.css')}}">
     <script rel="stylesheet" href="{{asset('layout/jQuery/jquery.min.js')}}"></script>
-    <script rel="stylesheet" href="{{asset('layout/jQuery/jquery.uploadfile.min.js')}}"></script>
+    <script rel="stylesheet" href="{{asset('layout/jQuery/js/jquery.uploadfile.min.js')}}"></script>
 
     <style>
         body {
