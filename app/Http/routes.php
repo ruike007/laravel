@@ -51,14 +51,10 @@ Route::resource('user','UserController',
  */
 Route::post('search','HomeController@search');
 
-/**
- * 测试路由
- */
-Route::get('test',
-    function(){
-        return view('test');
-    });
 
+Route::get('eml','EmlController@index');
+Route::post('eml','EmlController@upload');
+Route::get('eml/download','EmlController@download');
 /**
  * github 推送路由
  */

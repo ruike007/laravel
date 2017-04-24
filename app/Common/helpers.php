@@ -141,3 +141,19 @@ function  authcode($string, $operation = 'DECODE', $key = '', $expiry = 0)
     }
 }
 
+function eml_chage($task)
+{
+    $i = 0;
+    $tasks = [[1,2,3],[1,2,3]];
+    foreach ($task as $k)
+    {
+        echo $k->sendUser;
+        $tasks[$i]->user = $k->sendUser;
+        $tasks[$i]->email = $k->email;
+        $tasks[$i]->text = $k->text;
+        $i++;
+        echo $i;
+    }
+    dd($tasks);
+    return $task;
+}
